@@ -31,7 +31,7 @@ Restaurant createRestaurant(){
     cin >> temp.avg_price;
     cout << "Enter capacity: ";
     cin >> temp.capacity;
-    cout << "Has restrooms?(true/false): ";
+    cout << "Has restrooms?(1- true, 0- false): ";
     cin >> temp.has_restroom;
     cout << "Enter sanitary grade (A-F): ";
     cin >> temp.sanitary_grade;

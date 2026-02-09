@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -49,10 +49,11 @@ Restaurant createRestaurant(){
 
     //taking inputs for restaurant members while handling errors with while loops
 
-    cin.ignore();
     cout << "Enter restaurant address: ";
+    cin.ignore();
     getline(cin, temp.address);
     while (temp.address.empty()) {
+        cin.ignore(2000, '\n');
         cout << "Please enter a valid address." << endl;
         cout << "Enter restaurant address: ";
         getline(cin, temp.address);
@@ -88,13 +89,13 @@ Restaurant createRestaurant(){
         cin >> temp.has_restroom;
     }
 
-    cout << "Enter sanitary grade (A-F): ";
+    cout << "Enter sanitary grade (A-F, caps only): ";
     cin >> temp.sanitary_grade;
     while (cin.fail() || temp.sanitary_grade < 'A' || temp.sanitary_grade > 'F') {
         cin.clear();
         cin.ignore(2000, '\n');
         cout << "Please enter a valid sanitary grade.\n";
-        cout << "Enter sanitary grade (A-F): ";
+        cout << "Enter sanitary grade (A-F, caps only): ";
         cin >> temp.sanitary_grade;
     }
     return temp;
@@ -103,7 +104,7 @@ Restaurant createRestaurant(){
 void outputRestaurant(Restaurant res){
 
     cout << "Restaurant address: " << res.address << endl;
-    cout << "Average price: $" << res.avg_price << endl;
+    cout << "Average price: $" << setprecision(2) << fixed << res.avg_price << endl;
     cout << "Capacity: " << res.capacity << endl;
     cout << "Has restrooms: " << (res.has_restroom ? "Yes" : "No") << endl;
     cout << "Sanitary grade: " << res.sanitary_grade << endl;

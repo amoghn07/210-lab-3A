@@ -47,7 +47,8 @@ Restaurant createRestaurant(){
     //temp object for inputs
     Restaurant temp;
 
-    //taking input for restaurant members
+    //taking inputs for restaurant members while handling errors with while loops
+
     cin.ignore();
     cout << "Enter restaurant address: ";
     getline(cin, temp.address);
@@ -89,7 +90,6 @@ Restaurant createRestaurant(){
 
     cout << "Enter sanitary grade (A-F): ";
     cin >> temp.sanitary_grade;
-    (char)toupper(temp.sanitary_grade);
     while (cin.fail() || temp.sanitary_grade < 'A' || temp.sanitary_grade > 'F') {
         cin.clear();
         cin.ignore(2000, '\n');
@@ -106,7 +106,7 @@ void outputRestaurant(Restaurant res){
     cout << "Average price: $" << res.avg_price << endl;
     cout << "Capacity: " << res.capacity << endl;
     cout << "Has restrooms: " << (res.has_restroom ? "Yes" : "No") << endl;
-    cout << "Sanitary grade: " << (char)toupper(res.sanitary_grade) << endl;
+    cout << "Sanitary grade: " << res.sanitary_grade << endl;
     cout << "\n-----------------------------" << endl;
 
 }

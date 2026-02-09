@@ -11,6 +11,15 @@ struct Restaurant{
     char sanitary_grade;
 };
 
+Restaurant createRestautant();
+
+
+int main(){
+
+    Restaurant res1 = createRestautant();
+    return 0;
+}
+
 Restaurant createRestautant(){
     Restaurant temp;
 
@@ -28,8 +37,4 @@ Restaurant createRestautant(){
     return temp;
 }
 
-int main(){
 
-    Restaurant res1 = createRestautant();
-    return 0;
-}

@@ -8,9 +8,9 @@ using namespace std;
 //capacity, restroom availability, and sanitary grade.
 struct Restaurant{
     string address;
-    double avg_price;
-    int capacity;
-    bool has_restroom;
+    double avg_price = 0;
+    int capacity = 0;
+    bool has_restroom = 0;
     char sanitary_grade;
 };
 
@@ -49,7 +49,7 @@ Restaurant createRestaurant(){
 
     //taking input for restaurant members
     cin.ignore();
-    cout << "\nEnter restaurant address: ";
+    cout << "Enter restaurant address: ";
     getline(cin, temp.address);
     while (temp.address.empty()) {
         cout << "Please enter a valid address." << endl;
@@ -58,6 +58,13 @@ Restaurant createRestaurant(){
     }
     cout << "Enter average price: ";
     cin >> temp.avg_price;
+    while (cin.fail() || temp.avg_price <= 0) {
+        cin.ignore();
+        cin.clear();
+        cout << "Please enter a valid average price.\n";
+        cout << "Enter average price: ";
+        cin >> temp.avg_price;
+    }
     cout << "Enter capacity: ";
     cin >> temp.capacity;
     cout << "Has restrooms?(1- true, 0- false): ";
@@ -74,7 +81,7 @@ void outputRestaurant(Restaurant res){
     cout << "Average price: $" << res.avg_price << endl;
     cout << "Capacity: " << res.capacity << endl;
     cout << "Has restrooms: " << (res.has_restroom ? "Yes" : "No") << endl;
-    cout << "Sanitary grade: " << toupper(res.sanitary_grade) << endl;
+    cout << "Sanitary grade: " << (char)toupper(res.sanitary_grade) << endl;
     cout << "\n-----------------------------" << endl;
 
 }

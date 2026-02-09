@@ -21,17 +21,21 @@ void outputRestaurant(Restaurant res);
 int main(){
 
     Restaurant res1 = createRestaurant();
-    cout << "Restaurant 1: " << outputRestaurant(res1) << endl;
+    cout << "\nRestaurant 1:\n";
+    outputRestaurant(res1);
 
     Restaurant res2 = createRestaurant();
-    cout << "Restaurant 2: " << outputRestaurant(res2) << endl;
+    cout << "\nRestaurant 2:\n";
+    outputRestaurant(res2);
 
     Restaurant res3 = createRestaurant();
-    cout << "Restaurant 3: " << outputRestaurant(res3) << endl;
+    cout << "\nRestaurant 3:\n";
+    outputRestaurant(res3);
 
     Restaurant res4 = createRestaurant();
-    cout << "Restaurant 4: " << outputRestaurant(res4) << endl;
-    
+    cout << "\nRestaurant 4:\n";
+    outputRestaurant(res4);
+
     return 0;
 }
 
@@ -40,7 +44,8 @@ Restaurant createRestaurant(){
     Restaurant temp;
 
     //taking input for restaurant members
-    cout << "Enter restaurant address: ";
+    cin.ignore();
+    cout << "\nEnter restaurant address: ";
     getline(cin, temp.address);
     cout << "Enter average price: ";
     cin >> temp.avg_price;

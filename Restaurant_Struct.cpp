@@ -79,7 +79,7 @@ Restaurant createRestaurant(){
 
     cout << "Has restrooms?(1- true, 0- false): ";
     cin >> temp.has_restroom;
-    while (cin.fail() || temp.has_restroom.empty()) {
+    while (cin.fail()) {
         cin.clear();
         cin.ignore(2000, '\n');
         cout << "Please enter a valid option.\n";
@@ -93,9 +93,9 @@ Restaurant createRestaurant(){
     while (cin.fail() || temp.sanitary_grade < 'A' || temp.sanitary_grade > 'F') {
         cin.clear();
         cin.ignore(2000, '\n');
-        cout << "Please enter a valid average price.\n";
-        cout << "Enter average price: ";
-        cin >> temp.avg_price;
+        cout << "Please enter a valid sanitary grade.\n";
+        cout << "Enter sanitary grade (A-F): ";
+        cin >> temp.sanitary_grade;
     }
     return temp;
 }

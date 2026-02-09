@@ -21,18 +21,22 @@ void outputRestaurant(Restaurant res);
 int main(){
 
     Restaurant res1 = createRestaurant();
+    cout << "\n-----------------------------" << endl;
     cout << "\nRestaurant 1:\n";
     outputRestaurant(res1);
 
     Restaurant res2 = createRestaurant();
+    cout << "\n-----------------------------" << endl;
     cout << "\nRestaurant 2:\n";
     outputRestaurant(res2);
 
     Restaurant res3 = createRestaurant();
+    cout << "\n-----------------------------" << endl;
     cout << "\nRestaurant 3:\n";
     outputRestaurant(res3);
 
     Restaurant res4 = createRestaurant();
+    cout << "\n-----------------------------" << endl;
     cout << "\nRestaurant 4:\n";
     outputRestaurant(res4);
 
@@ -60,10 +64,12 @@ Restaurant createRestaurant(){
 }
 
 void outputRestaurant(Restaurant res){
+
     cout << "Restaurant address: " << res.address << endl;
-    cout << "Average price: " << res.avg_price << endl;
+    cout << "Average price: $" << res.avg_price << endl;
     cout << "Capacity: " << res.capacity << endl;
     cout << "Has restrooms: " << (res.has_restroom ? "Yes" : "No") << endl;
-    cout << "Sanitary grade: " << res.sanitary_grade << endl;
+    cout << "Sanitary grade: " << toupper(res.sanitary_grade) << endl;
+    cout << "\n-----------------------------" << endl;
 
 }

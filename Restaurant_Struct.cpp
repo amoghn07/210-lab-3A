@@ -51,6 +51,11 @@ Restaurant createRestaurant(){
     cin.ignore();
     cout << "\nEnter restaurant address: ";
     getline(cin, temp.address);
+    while (temp.address.empty()) {
+        cout << "Please enter a valid address." << endl;
+        cout << "Enter restaurant address: ";
+        getline(cin, temp.address);
+    }
     cout << "Enter average price: ";
     cin >> temp.avg_price;
     cout << "Enter capacity: ";

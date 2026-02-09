@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+
+//Definining Restaurant struct
 struct Restaurant{
     string address;
     double avg_price;
@@ -11,16 +13,16 @@ struct Restaurant{
     char sanitary_grade;
 };
 
-Restaurant createRestautant();
+Restaurant createRestaurant();
 
 
 int main(){
 
-    Restaurant res1 = createRestautant();
+    Restaurant res1 = createRestaurant();
     return 0;
 }
 
-Restaurant createRestautant(){
+Restaurant createRestaurant(){
     Restaurant temp;
 
     cout << "Enter restaurant address: ";
